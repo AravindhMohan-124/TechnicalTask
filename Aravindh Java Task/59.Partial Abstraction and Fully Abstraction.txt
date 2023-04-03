@@ -1,0 +1,88 @@
+package org.test;
+
+public abstract class Abstraction { //Partial Abstraction Parent class
+
+	//abstract method
+	public abstract void savings(); 
+		
+    public abstract void deposit(); 
+		
+	//non abstract method
+	public void fixed() {
+		System.out.println("8%");
+	}
+}
+
+
+
+package org.test;
+
+public class PartialAbstraction extends Abstraction {//Partial Abstraction Child class
+
+	@Override
+	public void savings() {
+		System.out.println("6%");
+		
+	}
+
+	@Override
+	public void deposit() {
+		System.out.println("9%");
+	}
+
+	public static void main(String[] args) {
+		PartialAbstraction p=new PartialAbstraction();
+		p.savings();
+	    p.deposit();
+	    p.fixed();
+	}}
+
+
+
+
+
+2.Fully Abstraction 
+
+
+package org.test;
+
+public interface Abstraction1 { //Fully Abstraction parent class
+
+	void savings();
+	
+	void deposit();
+	
+	void fixed();
+	}
+
+
+package org.test;
+
+public class FullyAbstraction1 implements Abstraction1 {//Fully Abstraction Child class
+
+	@Override
+	public void savings() {
+		System.out.println("6%");
+		
+	}
+
+	@Override
+	public void deposit() {
+		System.out.println("7%");
+		
+	}
+
+	@Override
+	public void fixed() {
+		System.out.println("8%");
+	}
+	public static void main(String[] args) {
+		PartialAbstraction1 e=new PartialAbstraction1();
+		e.savings();
+		e.deposit();
+		e.fixed();
+		
+		
+		
+	}
+}
